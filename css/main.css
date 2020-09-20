@@ -1,0 +1,225 @@
+:root
+{
+    --rgba-red-100: rgba(255, 0, 0, 1);
+    --rgba-red-075: rgba(255, 0, 0, 0.75);
+    --rgba-red-050: rgba(255, 0, 0, 0.5);
+    --rgba-red-025: rgba(255, 0, 0, 0.25);
+
+    --rgba-yellow-100: rgba(255, 255, 0, 1);
+    --rgba-yellow-075: rgba(255, 255, 0, 0.75);
+    --rgba-yellow-050: rgba(255, 255, 0, 0.5);
+    --rgba-yellow-025: rgba(255, 255, 0, 0.25);
+
+    --rgba-green-100: rgba(0, 255, 0, 1);
+    --rgba-green-075: rgba(0, 255, 0, 0.75);
+    --rgba-green-050: rgba(0, 255, 0, 0.5);
+    --rgba-green-025: rgba(0, 255, 0, 0.25);
+
+    --rgba-cyan-100: rgba(0, 255, 255, 1);
+    --rgba-cyan-075: rgba(0, 255, 255, 0.75);
+    --rgba-cyan-050: rgba(0, 255, 255, 0.5);
+    --rgba-cyan-025: rgba(0, 255, 255, 0.25);
+
+    --rgba-blue-100: rgba(0, 0, 255, 1);
+    --rgba-blue-075: rgba(0, 0, 255, 0.75);
+    --rgba-blue-050: rgba(0, 0, 255, 0.5);
+    --rgba-blue-025: rgba(0, 0, 255, 0.25);
+
+    --rgba-magenta-100: rgba(255, 0, 255, 1);
+    --rgba-magenta-075: rgba(255, 0, 255, 0.75);
+    --rgba-magenta-050: rgba(255, 0, 255, 0.5);
+    --rgba-magenta-025: rgba(255, 0, 255, 0.25);
+
+    --rgba-white-100: rgba(255, 255, 255, 1);
+    --rgba-white-075: rgba(255, 255, 255, 0.75);
+    --rgba-white-050: rgba(255, 255, 255, 0.5);
+    --rgba-white-025: rgba(255, 255, 255, 0.25);
+
+    --rgba-lightgrey-100: rgba(191, 191, 191, 1);
+    --rgba-lightgrey-075: rgba(191, 191, 191, 0.75);
+    --rgba-lightgrey-050: rgba(191, 191, 191, 0.5);
+    --rgba-lightgrey-025: rgba(191, 191, 191, 0.25);
+
+    --rgba-grey-100: rgba(127, 127, 127, 1);
+    --rgba-grey-075: rgba(127, 127, 127, 0.75);
+    --rgba-grey-050: rgba(127, 127, 127, 0.5);
+    --rgba-grey-025: rgba(127, 127, 127, 0.25);
+
+    --rgba-darkgrey-100: rgba(63, 63, 63, 1);
+    --rgba-darkgrey-075: rgba(63, 63, 63, 0.75);
+    --rgba-darkgrey-050: rgba(63, 63, 63, 0.5);
+    --rgba-darkgrey-025: rgba(63, 63, 63, 0.25);
+
+    --rgba-black-100: rgba(0, 0, 0, 1);
+    --rgba-black-075: rgba(0, 0, 0, 0.75);
+    --rgba-black-050: rgba(0, 0, 0, 0.5);
+    --rgba-black-025: rgba(0, 0, 0, 0.25);
+
+    --site-background-color: var(--rgba-darkgrey-100);
+
+    --element-border-width-thin: 1px;
+    --element-border-width-bold: 3px;
+
+    --element-border-color-normal: var(--rgba-white-025);
+    --element-background-color-normal: var(--rgba-lightgrey-025);
+    --element-text-color-normal: var(--rgba-white-100);
+
+    --element-border-color-active: var(--rgba-yellow-075);
+    --element-background-color-active: var(--rgba-lightgrey-025);
+    --element-text-color-active: var(--rgba-yellow-075);
+}
+
+*
+{
+	box-sizing: border-box;
+    font-size: 16px;
+    position: relative;
+    font-family: Arial;
+}
+
+html,
+body
+{
+	margin: 0;
+    padding: 0;
+    background-color: var(--site-background-color);
+}
+
+button,
+input,
+select,
+.toggle
+{
+    margin: 0.5em 0;
+}
+
+button,
+input,
+select,
+option
+{
+    border-width: var(--element-border-width-thin);
+    border-bottom-width: var(--element-border-width-bold);
+    border-color: var(--element-border-color-normal);
+    background-color: var(--element-background-color-normal);
+    background-image: radial-gradient(farthest-side at center bottom, rgba(255,255,0,0.25) 0%, rgba(0,0,0,0) 50%);
+    background-repeat: no-repeat;
+    background-size: 200% 200%;
+    background-position: center top;
+    border-style: solid;
+    text-transform: uppercase;
+    font-weight: 700;
+    height: 2em;
+    padding: 0.25em 1em 0;
+    transition: all 0.25s ease;
+    color: var(--element-text-color-normal);
+    outline: none;
+}
+
+button:hover,
+input:hover,
+select:hover,
+.dropdown .parent:hover
+{
+    background-position: center bottom;
+}
+
+button:focus,
+button:hover,
+input:focus,
+input:hover,
+select:focus,
+select:hover
+{
+    border-color: var(--element-border-color-active);
+    color: var(--element-text-color-active);
+}
+
+.range button,
+.range input[type=text]
+{
+    background: transparent;
+    border: none;
+    width: 2em;
+}
+
+.range input[type=text]
+{
+    width: 4em;
+    text-align: right;
+}
+
+.range input[type=range]
+{
+    -webkit-appearance: none;
+    height: 0.5em;
+    padding: 0;
+    border-width: var(--element-border-width-thin);
+    background: transparent;
+    background-image: linear-gradient(to right, white 50%, transparent 50%);
+    background-repeat: no-repeat;
+    background-size: 200% 100%;
+    background-position-x: calc(100% - 37%);
+}
+
+.range input[type=range]::-webkit-slider-thumb
+{
+    -webkit-appearance: none;
+    border: var(--element-border-width-thin) solid var(--element-text-color-normal);
+    background-color: transparent;
+    height: 1em;
+    width: 0.25em;
+    cursor: pointer;
+    /*margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+.range input[type=range]:hover::-webkit-slider-thumb,
+.range input[type=range]:focus::-webkit-slider-thumb
+{
+    border-color: var(--element-border-color-active);
+}
+
+.toggle
+{
+    width: 4em;
+    height: 2em;
+    border: var(--element-border-width-thin) solid var(--element-border-color-normal);
+    transition: all 0.25s ease;
+}
+
+.toggle:hover
+{
+    border-color: var(--element-border-color-active);
+}
+
+.toggle .toggle-bg
+{
+    background: transparent;
+    margin: calc(var(--element-border-width-thin) * -1);
+    transition: all 0.25s ease;
+}
+
+.toggle input[type=checkbox]:checked ~ .toggle-bg
+{
+    background: var(--element-border-color-normal);
+}
+
+.toggle input[type=checkbox]
+{
+    display: none;
+}
+
+.toggle .toggle-slider
+{
+    background: transparent;
+    width: 2em;
+    height: 2em;
+    left: 0em;
+    border: var(--element-border-width-thin) solid var(--element-border-color-normal);
+    transition: all 0.25s ease;
+}
+
+.toggle input[type=checkbox]:checked ~ .toggle-bg .toggle-slider
+{
+    left: 2em;
+}
