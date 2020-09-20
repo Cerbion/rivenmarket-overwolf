@@ -3,22 +3,56 @@
 
 <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="../css/reset.css" />
-    <link rel="stylesheet" href="../css/fonts.css" />
-    <link rel="stylesheet" href="../css/general.css" />
-    <link rel="stylesheet" href="../css/header.css" />
-    <link rel="stylesheet" href="../css/desktop.css" />
-    <link rel="stylesheet" href="../css/modal.css" />
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="../../css/fonts.css" />
+    <link rel="stylesheet" href="../../css/grid.css" />
+    <link rel="stylesheet" href="../../css/main.css" />
     <title>Riven.market Overwolf App</title>
 </head>
 
-<body class="desktop">
+<body>
+    <background>
+        <!-- Reserved for Background Image -->
+    </background>
+    <div class="container">
+        <div id="taskbar" class="row">
+            <div class="col-auto middle">
+                <img src="../../img/favicon.png">
+            </div>
+            <div class="col middle">
+                Riven.market - Warframe Riven trading App
+            </div>
+            <div class="col-auto middle nowrap" style="display: inline-block;">
+                <button class="" id="minimizeButton">
+                    <i class="material-icons">minimize</i>
+                </button>
+                <button class="" id="maximizeButton">
+                    <i class="material-icons">web_asset</i>
+                </button>
+                <button class="" id="closeButton">
+                    <i class="material-icons">close</i>
+                </button>
+            </div>
+        </div>
+        <div id="header" class="row">
+            <div class="col-auto">
+                <img src="../../img/header.png">
+            </div>
+            <div id="version" class="col top right">
+                ALPHA v0.0.8
+            </div>
+        </div>
+        <div id="content" class="row">
+        </div>
+    </div>
+</body>
+<!-- <body class="desktop">
     <background>
     </background>
-    <script src="../lib.js"></script>
-    <script src="../main.js"></script>
+    <script src="../../lib.js"></script>
+    <script src="../../main.js"></script>
     <header id="header" class="app-header">
-        <img src="../img/favicon.png">
+        <img src="../../img/favicon.png">
         <h1>Riven.market - Warframe Riven trading App</h1>
         <div class="window-controls-group">
             <button class="icon window-control support">
@@ -50,22 +84,20 @@
     <main>
         <div class="desktopTop">
             <span class="middleAnchor"></span>
-            <img src="../img/header.png">
-            <div id="version">ALPHA v0.0.7</div>
+            <img src="../../img/header.png">
+            <div id="version">ALPHA v0.0.8</div>
         </div>
         <div id="mainContent" class="desktopBottom">
-            <!-- Launch Warframe! -->
             <div id="left">
                 <h1>
                     Loading a list of the latest Rivens...
                 </h1>
                 <p> This list will be updated in Realtime and will always show the very latest Rivens on top. </p>
             </div>
-            <!-- picture -->
             <div id="right">
                 <div style="text-align: center">
                     <div style="display: inline-block">
-                        <img src="../img/rm-ow.png">
+                        <img src="../../img/rm-ow.png">
                     </div>
                 </div>
             </div>
@@ -129,6 +161,6 @@
             </span>
         </div>
     </div>
-</body>
+</body> -->
 
 </html>

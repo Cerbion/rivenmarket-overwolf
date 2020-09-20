@@ -4,7 +4,7 @@
     "meta": {
         "name": "Sample App",
         "author": "Overwolf",
-        "version": "0.0.2",
+        "version": "0.0.8",
         "minimum-overwolf-version": "0.92.300.0",
         "description": "A Riven trading App",
         "dock_button_title": "Riven.market",
@@ -28,10 +28,37 @@
         "start_window": "index",
         "windows": {
             "index": {
-                "file": "dist/index.html",
+                "file": "dist/windows/index.html",
                 "desktop_only": true,
                 "native_window": true,
                 "resizable": true,
+                "transparent": true,
+                "size": {
+                    "width": 1212,
+                    "height": 699
+                },
+                "min_size": {
+                    "width": 1212,
+                    "height": 699
+                }
+            },
+            "background": {
+                "file": "dist/windows/background.html",
+                "desktop_only": true,
+                "native_window": true,
+                "size": {
+                    "width": 1212,
+                    "height": 699
+                },
+                "min_size": {
+                    "width": 1212,
+                    "height": 699
+                }
+            },
+            "in_game": {
+                "file": "dist/windows/in_game.html",
+                "in_game_only": true,
+                "resizable": false,
                 "transparent": true,
                 "size": {
                     "width": 1212,

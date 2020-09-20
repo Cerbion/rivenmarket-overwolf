@@ -20,5 +20,9 @@
 				]
 			}
 		]
+	},
+	"settings": {
+		"prettier.tabWidth": 4,
+		"prettier.semi": false
 	}
 }
