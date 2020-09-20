@@ -129,6 +129,12 @@
   min-width: 0px;
 }
 
+[class^=col].nowrap
+{
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
 .col-auto
 {
 	flex-grow: 0;
