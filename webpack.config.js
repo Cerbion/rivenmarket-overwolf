@@ -19,7 +19,7 @@ module.exports = {
     },
     output: {
         path: `${__dirname}/dist`,
-        filename: '[name]/[name].js'
+        filename: 'windows/[name].js'
     },
     plugins: [
         new HtmlWebpackPlugin({

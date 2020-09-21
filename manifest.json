@@ -60,14 +60,6 @@
                 "in_game_only": true,
                 "resizable": false,
                 "transparent": true,
-                "size": {
-                    "width": 1212,
-                    "height": 699
-                },
-                "min_size": {
-                    "width": 1212,
-                    "height": 699
-                }
             }
         },
         "game_events": [8954],
