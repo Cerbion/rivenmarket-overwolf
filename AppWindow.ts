@@ -14,19 +14,12 @@ export class AppWindow {
     const closeButton = document.getElementById('closeButton');
     const maximizeButton = document.getElementById('maximizeButton');
     const minimizeButton = document.getElementById('minimizeButton');
-    const modal = document.getElementById('exitMinimizeModal');
-    const modalCloseButton = document.getElementById('exit');
-    const modalMinimizeButton = document.getElementById('minimize');
 
-    const header = document.getElementById('header');
+    const header = document.getElementById('windowframe');
     
     this.setDrag(header);
     
     closeButton.addEventListener('click', () => {
-      modal.style.display = 'block';
-    });
-
-    modalCloseButton.addEventListener('click', () => {
       this.mainWindow.close();
     });
     
@@ -44,10 +37,6 @@ export class AppWindow {
       this.maximized = !this.maximized;
     });
 
-    modalMinimizeButton.addEventListener('click', () => {
-      this.currWindow.minimize();
-      modal.style.display = 'none';
-    });
   }
 
   public async getWindowState() {

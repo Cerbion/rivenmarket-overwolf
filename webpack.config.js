@@ -2,7 +2,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
-        index: './index.ts'
+        index: './windows/index.ts',
+        background: './windows/background.ts',
+        in_game: './windows/in_game.ts'
     },
     devtool: 'inline-source-map',
     module: {
@@ -17,28 +19,23 @@ module.exports = {
     },
     output: {
         path: `${__dirname}/dist`,
-        filename: '[name]/[name].js'
+        filename: 'windows/[name].js'
     },
     plugins: [
-        // new HtmlWebpackPlugin({
-        //     template: './windows/background/background.html',
-        //     filename: `${__dirname}/dist/background/background.html`,
-        //     chunks: ['background']
-        // }),
-        // new HtmlWebpackPlugin({
-        //     template: './windows/desktop/desktop.html',
-        //     filename: `${__dirname}/dist/desktop/desktop.html`,
-        //     chunks: ['desktop']
-        // }),
         new HtmlWebpackPlugin({
-            template: './index.html',
-            filename: `${__dirname}/dist/index.html`,
+            template: './windows/index.html',
+            filename: `${__dirname}/dist/windows/index.html`,
             chunks: ['index']
+        }),
+        new HtmlWebpackPlugin({
+            template: './windows/background.html',
+            filename: `${__dirname}/dist/windows/background.html`,
+            chunks: ['background']
+        }),
+        new HtmlWebpackPlugin({
+            template: './windows/in_game.html',
+            filename: `${__dirname}/dist/windows/in_game.html`,
+            chunks: ['in_game']
         })
-        // new HtmlWebpackPlugin({
-        //     template: './windows/in_game/in_game.html',
-        //     filename: `${__dirname}/dist/in_game/in_game.html`,
-        //     chunks: ['in_game']
-        // })
     ]
 }

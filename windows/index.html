@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="../../css/fonts.css" />
+    <link rel="stylesheet" href="../../css/grid.css" />
+    <link rel="stylesheet" href="../../css/main.css" />
+    <title>Riven.market Overwolf App</title>
+</head>
+
+<body>
+    <background>
+        <!-- Reserved for Background Image -->
+        <script src="../../js/lib.js"></script>
+        <script src="../../js/main.js"></script>
+    </background>
+    <div class="container">
+        <div id="windowframe" class="row">
+            <div class="col-auto middle">
+                <img src="../../img/favicon.png">
+            </div>
+            <div class="col middle">
+                Riven.market - Warframe Riven trading App
+            </div>
+            <div class="col-auto middle">
+                <b>Logged in as: -</b>
+            </div>
+            <div class="col-auto middle nowrap" style="display: inline-block;">
+                <button class="" id="minimizeButton">
+                    <i class="material-icons">minimize</i>
+                </button>
+                <button class="" id="maximizeButton">
+                    <i class="material-icons">web_asset</i>
+                </button>
+                <button class="" id="closeButton">
+                    <i class="material-icons">close</i>
+                </button>
+            </div>
+        </div>
+        <div id="header" class="row">
+            <div class="col-auto">
+                <img src="../../img/header.png">
+            </div>
+            <div id="version" class="col top right">
+                ALPHA v0.0.8
+            </div>
+        </div>
+        <div id="content" class="row grow morevertpad">
+            <div id="left" class="col">
+                <div class="row">
+                    <h1 class="col">
+                        Loading most recent Riven...
+                    </h1>
+                </div>
+                <div class="row">
+                    <div class="col-3">Weapon / Name</div>
+                    <div class="col-3">Stats</div>
+                    <div class="col-2">Details</div>
+                    <div class="col-3">Price / Seller</div>
+                    <div class="col-1">Actions</div>
+                </div>
+                <div class="row riven-entry">
+                    <div class="col-3">Shedu Acritia</div>
+                    <div class="col-1 right">+130.3%<br>+98.2%<br>-42.9%</div>
+                    <div class="col-2">Crit Chance<br>Crit Damage<br>Zoom</div>
+                    <div class="col-2">20 Rerolls<br>Rank 3 / 8<br>MR 10</div>
+                    <div class="col-3">1400p<br>Cerbion<br>3 Minutes ago</div>
+                    <div class="col-1">
+                        <button><i class="material-icons">message</i></button>
+                    </div>
+                </div>
+            </div>
+            <div id="right" class="col-auto middle center">
+            <button
+                onclick="overwolf.windows.obtainDeclaredWindow('in_game', function(w) { console.log(w); }); overwolf.windows.restore('in_game', function(w) { console.log(w); });">TEST
+                INGAME</button>
+                <img src="../../img/rm-ow.png">
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var platform = "PC";
+    var limit = "10";
+    var recency = "-1";
+    var veiled = "false";
+    var onlinefirst = "false";
+    var polarity = "all";
+    var rank = "all";
+    var mastery = "16";
+    var weapon = "Any";
+    var stats = "Any";
+    var neg = "Any";
+    var maxprice = "99999";
+    var maxrerolls = "9999";
+    var sort = "time";
+    var direction = "ASC";
+    var page = 1;
+    setInterval(function () {
+        loadJSON('https://riven.market/_modules/riven/internal.php?baseurl=' + btoa("riven.market") +
+            '&platform=' + platform +
+            '&limit=' + limit +
+            '&recency=' + recency +
+            '&veiled=' + veiled
+            //+'&maxed='+maxed
+            +
+            '&onlinefirst=' + onlinefirst +
+            '&polarity=' + polarity +
+            '&rank=' + rank +
+            '&mastery=' + mastery +
+            '&weapon=' + weapon.replaceAll("&", "%26") +
+            '&stats=' + stats +
+            '&neg=' + neg +
+            '&price=' + maxprice +
+            '&rerolls=' + maxrerolls +
+            '&sort=' + sort +
+            '&direction=' + direction +
+            '&page=' + page);
+    }, 10000);
+</script>
+</html>

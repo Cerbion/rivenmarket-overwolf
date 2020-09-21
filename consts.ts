@@ -1,6 +1,8 @@
 
 const windowNames = {
-  index: 'index'
+  index: 'index',
+  background: 'background',
+  in_game: 'in_game'
 };
 
 export {

@@ -13,7 +13,6 @@ var g_interestedInFeatures = [
 var game_info;
 
 function registerEvents() {
-    console.log("trying to register events...");
     // general events errors
     overwolf.games.events.onError.addListener(function(info) {
         console.log("Error: " + JSON.stringify(info));
@@ -102,7 +101,7 @@ overwolf.games.onGameInfoUpdated.addListener(function(res) {
         registerEvents();
         setTimeout(setFeatures, 1000);
     }
-    console.log("onGameInfoUpdated: " + JSON.stringify(res));
+    // console.log("onGameInfoUpdated: " + JSON.stringify(res));
 });
 
 overwolf.games.getRunningGameInfo(function(res) {
