@@ -1,6 +1,5 @@
 :root
 {
-<<<<<<< HEAD
     --rgba-primary-100: rgba(255, 255, 0, 1);
     --rgba-primary-075: rgba(255, 255, 0, 0.75);
     --rgba-primary-050: rgba(255, 255, 0, 0.5);
@@ -41,7 +40,7 @@
     --rgba-black-050: rgba(0, 0, 0, 0.5);
     --rgba-black-025: rgba(0, 0, 0, 0.25);
 
-    --site-background-color: var(--rgba-darkgrey-100);
+    --site-background-color: var(transparent);
 
     --element-border-width-thin: 1px;
     --element-border-width-bold: 3px;
@@ -54,75 +53,6 @@
     --element-background-color-active: transparent;
     --element-background-gradient-color-active: var(--rgba-primary-025);
     --element-text-color-active: var(--rgba-primary-075);
-=======
-  --rgba-red-100: rgba(255, 0, 0, 1);
-  --rgba-red-075: rgba(255, 0, 0, 0.75);
-  --rgba-red-050: rgba(255, 0, 0, 0.5);
-  --rgba-red-025: rgba(255, 0, 0, 0.25);
-  
-  --rgba-yellow-100: rgba(255, 255, 0, 1);
-  --rgba-yellow-075: rgba(255, 255, 0, 0.75);
-  --rgba-yellow-050: rgba(255, 255, 0, 0.5);
-  --rgba-yellow-025: rgba(255, 255, 0, 0.25);
-
-  --rgba-green-100: rgba(0, 255, 0, 1);
-  --rgba-green-075: rgba(0, 255, 0, 0.75);
-  --rgba-green-050: rgba(0, 255, 0, 0.5);
-  --rgba-green-025: rgba(0, 255, 0, 0.25);
-
-  --rgba-cyan-100: rgba(0, 255, 255, 1);
-  --rgba-cyan-075: rgba(0, 255, 255, 0.75);
-  --rgba-cyan-050: rgba(0, 255, 255, 0.5);
-  --rgba-cyan-025: rgba(0, 255, 255, 0.25);
-
-  --rgba-blue-100: rgba(0, 0, 255, 1);
-  --rgba-blue-075: rgba(0, 0, 255, 0.75);
-  --rgba-blue-050: rgba(0, 0, 255, 0.5);
-  --rgba-blue-025: rgba(0, 0, 255, 0.25);
-
-  --rgba-magenta-100: rgba(255, 0, 255, 1);
-  --rgba-magenta-075: rgba(255, 0, 255, 0.75);
-  --rgba-magenta-050: rgba(255, 0, 255, 0.5);
-  --rgba-magenta-025: rgba(255, 0, 255, 0.25);
-
-  --rgba-white-100: rgba(255, 255, 255, 1);
-  --rgba-white-075: rgba(255, 255, 255, 0.75);
-  --rgba-white-050: rgba(255, 255, 255, 0.5);
-  --rgba-white-025: rgba(255, 255, 255, 0.25);
-
-  --rgba-lightgrey-100: rgba(191, 191, 191, 1);
-  --rgba-lightgrey-075: rgba(191, 191, 191, 0.75);
-  --rgba-lightgrey-050: rgba(191, 191, 191, 0.5);
-  --rgba-lightgrey-025: rgba(191, 191, 191, 0.25);
-
-  --rgba-grey-100: rgba(127, 127, 127, 1);
-  --rgba-grey-075: rgba(127, 127, 127, 0.75);
-  --rgba-grey-050: rgba(127, 127, 127, 0.5);
-  --rgba-grey-025: rgba(127, 127, 127, 0.25);
-
-  --rgba-darkgrey-100: rgba(63, 63, 63, 1);
-  --rgba-darkgrey-075: rgba(63, 63, 63, 0.75);
-  --rgba-darkgrey-050: rgba(63, 63, 63, 0.5);
-  --rgba-darkgrey-025: rgba(63, 63, 63, 0.25);
-
-  --rgba-black-100: rgba(0, 0, 0, 1);
-  --rgba-black-075: rgba(0, 0, 0, 0.75);
-  --rgba-black-050: rgba(0, 0, 0, 0.5);
-  --rgba-black-025: rgba(0, 0, 0, 0.25);
-
-  --site-background-color: transparent;
-
-  --element-border-width-thin: 1px;
-  --element-border-width-bold: 3px;
-
-  --element-border-color-normal: var(--rgba-white-025);
-  --element-background-color-normal: var(--rgba-lightgrey-025);
-  --element-text-color-normal: var(--rgba-white-075);
-
-  --element-border-color-active: var(--rgba-yellow-075);
-  --element-background-color-active: var(--rgba-lightgrey-025);
-  --element-text-color-active: var(--rgba-yellow-075);
->>>>>>> 02f1d14d0e8c08f5fd0e30e5462007bf59641042
 }
 
 *
@@ -156,7 +86,6 @@ input,
 select,
 option
 {
-<<<<<<< HEAD
     border-width: var(--element-border-width-thin);
     border-bottom-width: var(--element-border-width-bold);
     border-color: var(--element-border-color-normal);
@@ -173,24 +102,6 @@ option
     transition: all 0.25s ease;
     color: var(--element-text-color-normal);
     outline: none;
-=======
-  border-width: var(--element-border-width-thin);
-  border-bottom-width: var(--element-border-width-bold);
-  border-color: var(--element-border-color-normal);
-  background-color: var(--element-background-color-normal);
-    background-image: radial-gradient(farthest-side at center bottom, rgba(255,255,0,0.25) 0%, rgba(0,0,0,0) 50%);
-  background-repeat: no-repeat;
-  background-size: 200% 200%;
-  background-position: center top;
-  border-style: solid;
-  text-transform: uppercase;
-  font-weight: 700;
-  height: 2em;
-  padding: 0.25em 1em 0;
-  transition: all 0.25s ease;
-  color: var(--element-text-color-normal);
-  outline: none;
->>>>>>> 02f1d14d0e8c08f5fd0e30e5462007bf59641042
 }
 
 button:hover,

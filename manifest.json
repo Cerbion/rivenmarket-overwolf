@@ -4,7 +4,7 @@
     "meta": {
         "name": "Sample App",
         "author": "Overwolf",
-        "version": "0.0.8",
+        "version": "0.0.9",
         "minimum-overwolf-version": "0.92.300.0",
         "description": "A Riven trading App",
         "dock_button_title": "Riven.market",
