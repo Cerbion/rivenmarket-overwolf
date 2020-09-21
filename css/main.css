@@ -1,58 +1,8 @@
 :root
 {
-  --rgba-primary-100: rgba(255, 255, 0, 1);
-  --rgba-primary-075: rgba(255, 255, 0, 0.75);
-  --rgba-primary-050: rgba(255, 255, 0, 0.5);
-  --rgba-primary-025: rgba(255, 255, 0, 0.25);
-
-  --rgba-secondary-100: rgba(0, 255, 255, 1);
-  --rgba-secondary-075: rgba(0, 255, 255, 0.75);
-  --rgba-secondary-050: rgba(0, 255, 255, 0.5);
-  --rgba-secondary-025: rgba(0, 255, 255, 0.25);
-
-  --rgba-teriary-100: rgba(255, 0, 255, 1);
-  --rgba-teriary-075: rgba(255, 0, 255, 0.75);
-  --rgba-teriary-050: rgba(255, 0, 255, 0.5);
-  --rgba-teriary-025: rgba(255, 0, 255, 0.25);
-
-  --rgba-white-100: rgba(255, 255, 255, 1);
-  --rgba-white-075: rgba(255, 255, 255, 0.75);
-  --rgba-white-050: rgba(255, 255, 255, 0.5);
-  --rgba-white-025: rgba(255, 255, 255, 0.25);
-
-  --rgba-lightgrey-100: rgba(191, 191, 191, 1);
-  --rgba-lightgrey-075: rgba(191, 191, 191, 0.75);
-  --rgba-lightgrey-050: rgba(191, 191, 191, 0.5);
-  --rgba-lightgrey-025: rgba(191, 191, 191, 0.25);
-
-  --rgba-grey-100: rgba(127, 127, 127, 1);
-  --rgba-grey-075: rgba(127, 127, 127, 0.75);
-  --rgba-grey-050: rgba(127, 127, 127, 0.5);
-  --rgba-grey-025: rgba(127, 127, 127, 0.25);
-
-  --rgba-darkgrey-100: rgba(63, 63, 63, 1);
-  --rgba-darkgrey-075: rgba(63, 63, 63, 0.75);
-  --rgba-darkgrey-050: rgba(63, 63, 63, 0.5);
-  --rgba-darkgrey-025: rgba(63, 63, 63, 0.25);
-
-  --rgba-black-100: rgba(0, 0, 0, 1);
-  --rgba-black-075: rgba(0, 0, 0, 0.75);
-  --rgba-black-050: rgba(0, 0, 0, 0.5);
-  --rgba-black-025: rgba(0, 0, 0, 0.25);
-
-  --site-background-color: transparent;
-
+  /* fixed to layout*/
   --element-border-width-thin: 1px;
   --element-border-width-bold: 3px;
-
-  --element-border-color-normal: var(--rgba-white-025);
-  --element-background-color-normal: var(--rgba-darkgrey-050);
-  --element-text-color-normal: var(--rgba-white-100);
-
-  --element-border-color-active: var(--rgba-primary-075);
-  --element-background-color-active: var(--rgba-darkgrey-050);
-  --element-background-gradient-color-active: var(--rgba-primary-025);
-  --element-text-color-active: var(--rgba-primary-075);
 }
 
 *
@@ -62,7 +12,7 @@
   position: relative;
   font-family: Arial;
   color: var(--element-text-color-normal);
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 html,
@@ -75,21 +25,25 @@ body
 
 button,
 input,
-.select,
-.toggle
+.toggle,
+.select
 {
   margin: 0.5em 0;
 }
 
 button,
 input,
-option
+.select label
 {
+  display: flex;
+  align-items: center;
+  justify-content: start;
   border-width: var(--element-border-width-thin);
   border-bottom-width: var(--element-border-width-bold);
   border-color: var(--element-border-color-normal);
+  border-bottom-color: var(--element-border-bottom-color-normal);
   background-color: var(--element-background-color-normal);
-  background-image: radial-gradient(farthest-side at center bottom, var(--element-background-gradient-color-active) 0%, rgba(0,0,0,0) 50%);
+  background-image: radial-gradient(farthest-side at center bottom, var(--element-background-gradient-color-active) 0%, transparent 50%);
   background-repeat: no-repeat;
   background-size: 200% 200%;
   background-position: center top;
@@ -97,14 +51,20 @@ option
   text-transform: uppercase;
   font-weight: 700;
   height: 2em;
-  padding: 0.25em 1em 0;
+  padding: 0 1em;
   transition: all 0.25s ease;
   color: var(--element-text-color-normal);
   outline: none;
 }
 
+button
+{
+  justify-content: center;
+}
+
 button:hover,
-input:hover
+input:hover,
+.select label:hover
 {
   background-position: center bottom;
 }
@@ -112,9 +72,11 @@ input:hover
 button:focus,
 button:hover,
 input:focus,
-input:hover
+input:hover,
+.select label:hover
 {
   border-color: var(--element-border-color-active);
+  border-bottom-color: var(--element-border-bottom-color-active);
   color: var(--element-text-color-active);
 }
 
@@ -139,10 +101,11 @@ input:hover
   padding: 0;
   border-width: var(--element-border-width-thin);
   background: transparent;
-  background-image: linear-gradient(to right, white 50%, transparent 50%);
+  background-image: linear-gradient(to right, var(--rgba-font-true-100) 50%, transparent 50%);
   background-repeat: no-repeat;
   background-size: 200% 100%;
   background-position-x: calc(100% - 37%);
+  overflow: visible;
 }
 
 .range input[type=range]::-webkit-slider-thumb
@@ -153,7 +116,7 @@ input:hover
   height: 1em;
   width: 0.25em;
   cursor: pointer;
-  /*margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  /* margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
 }
 
 .range input[type=range]:hover::-webkit-slider-thumb,
@@ -167,7 +130,6 @@ input:hover
   width: 4em;
   height: 2em;
   border: var(--element-border-width-thin) solid var(--element-border-color-normal);
-  transition: all 0.25s ease;
 }
 
 .toggle:hover
@@ -179,7 +141,6 @@ input:hover
 {
   background: transparent;
   margin: calc(var(--element-border-width-thin) * -1);
-  transition: all 0.25s ease;
 }
 
 .toggle input[type=checkbox]:checked ~ .toggle-bg
@@ -199,12 +160,74 @@ input:hover
   height: 2em;
   left: 0em;
   border: var(--element-border-width-thin) solid var(--element-border-color-normal);
-  transition: all 0.25s ease;
 }
 
 .toggle input[type=checkbox]:checked ~ .toggle-bg .toggle-slider
 {
   left: 2em;
+}
+
+.select
+{
+  overflow: visible;
+}
+
+.select button
+{
+  margin: 0;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.select button:focus:not(:hover)
+{
+  border-color: var(--element-border-color-normal);
+  border-bottom-color: var(--element-border-bottom-color-normal);
+  color: var(--element-text-color-normal);
+}
+
+.select button:after
+{
+  content: "▼";
+}
+
+.select button:focus:after
+{
+  content: "▲";
+}
+
+.select input[type=radio]
+{
+  display: none;
+}
+
+.select .options
+{
+  opacity: 0;
+  transition-property: opacity;
+  transition-delay: 1ms;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.select button:focus ~ .options
+{
+  opacity: 1;
+  transition-property: opacity;
+  transition-delay: 1ms;
+}
+
+.select .options label
+{
+  display: flex;
+  justify-content: space-between;
+}
+
+.select input[type=radio]:checked + label:after
+{
+  content: 'done';
 }
 
 /* DESIGN SPECIFIC CSS */
