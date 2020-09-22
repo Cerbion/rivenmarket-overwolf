@@ -1,0 +1,50 @@
+:root
+{
+  /* accent colors */
+  --rgba-primary-100: rgba(255, 255, 0, 1);
+  --rgba-primary-075: rgba(255, 255, 0, 0.75);
+  --rgba-primary-050: rgba(255, 255, 0, 0.5);
+  --rgba-primary-025: rgba(255, 255, 0, 0.25);
+  --rgba-secondary-100: rgba(0, 255, 255, 1);
+  --rgba-secondary-075: rgba(0, 255, 255, 0.75);
+  --rgba-secondary-050: rgba(0, 255, 255, 0.5);
+  --rgba-secondary-025: rgba(0, 255, 255, 0.25);
+  --rgba-teriary-100: rgba(255, 0, 255, 1);
+  --rgba-teriary-075: rgba(255, 0, 255, 0.75);
+  --rgba-teriary-050: rgba(255, 0, 255, 0.5);
+  --rgba-teriary-025: rgba(255, 0, 255, 0.25);
+
+  /* font colors*/
+  --rgba-font-true-100: rgba(255, 255, 255, 1);
+  --rgba-font-true-075: rgba(255, 255, 255, 0.75);
+  --rgba-font-true-050: rgba(255, 255, 255, 0.5);
+  --rgba-font-true-025: rgba(255, 255, 255, 0.25);
+  --rgba-font-pale-100: rgba(191, 191, 191, 1);
+  --rgba-font-pale-075: rgba(191, 191, 191, 0.75);
+  --rgba-font-pale-050: rgba(191, 191, 191, 0.5);
+  --rgba-font-pale-025: rgba(191, 191, 191, 0.25);
+  --rgba-font-background-100: rgba(127, 127, 127, 1);
+  --rgba-font-background-075: rgba(127, 127, 127, 0.75);
+  --rgba-font-background-050: rgba(127, 127, 127, 0.5);
+  --rgba-font-background-025: rgba(127, 127, 127, 0.25);
+  --rgba-background-pale-100: rgba(63, 63, 63, 1);
+  --rgba-background-pale-075: rgba(63, 63, 63, 0.75);
+  --rgba-background-pale-050: rgba(63, 63, 63, 0.5);
+  --rgba-background-pale-025: rgba(63, 63, 63, 0.25);
+  --rgba-background-true-100: rgba(0, 0, 0, 1);
+  --rgba-background-true-075: rgba(0, 0, 0, 0.75);
+  --rgba-background-true-050: rgba(0, 0, 0, 0.5);
+  --rgba-background-true-025: rgba(0, 0, 0, 0.25);
+
+  /* color scheme assignments */
+  --site-background-color: transparent;
+  --element-border-color-normal: transparent;
+  --element-border-bottom-color-normal: var(--rgba-font-true-025);
+  --element-background-color-normal: var(--rgba-background-pale-050);
+  --element-text-color-normal: var(--rgba-font-true-100);
+  --element-border-color-active: var(--rgba-primary-075);
+  --element-border-bottom-color-active: var(--rgba-primary-075);
+  --element-background-color-active: var(--rgba-background-pale-050);
+  --element-background-gradient-color-active: var(--rgba-primary-025);
+  --element-text-color-active: var(--rgba-primary-075);
+}
