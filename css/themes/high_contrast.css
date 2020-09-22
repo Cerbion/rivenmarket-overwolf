@@ -1,0 +1,85 @@
+:root
+{
+  /* base colors */
+  --rgb-font-primary: 15, 127, 223;
+  --rgb-font-secondary: 207, 95, 95;
+  --rgb-background-primary: 15, 31, 63;
+  --rgb-background-secondary: 15, 15, 31;
+  --rgb-accent: 255, 255, 15;
+  --rgba-font-primary-100: rgba(var(--rgb-font-primary), 1);
+  --rgba-font-primary-075: rgba(var(--rgb-font-primary), 0.75);
+  --rgba-font-primary-050: rgba(var(--rgb-font-primary), 0.5);
+  --rgba-font-primary-025: rgba(var(--rgb-font-primary), 0.25);
+  --rgba-font-secondary-100: rgba(var(--rgb-font-secondary), 1);
+  --rgba-font-secondary-075: rgba(var(--rgb-font-secondary), 0.75);
+  --rgba-font-secondary-050: rgba(var(--rgb-font-secondary), 0.5);
+  --rgba-font-secondary-025: rgba(var(--rgb-font-secondary), 0.25);
+  --rgba-background-primary-100: rgba(var(--rgb-background-primary), 1);
+  --rgba-background-primary-075: rgba(var(--rgb-background-primary), 0.75);
+  --rgba-background-primary-050: rgba(var(--rgb-background-primary), 0.5);
+  --rgba-background-primary-025: rgba(var(--rgb-background-primary), 0.25);
+  --rgba-background-secondary-100: rgba(var(--rgb-background-secondary), 1);
+  --rgba-background-secondary-075: rgba(var(--rgb-background-secondary), 0.75);
+  --rgba-background-secondary-050: rgba(var(--rgb-background-secondary), 0.5);
+  --rgba-background-secondary-025: rgba(var(--rgb-background-secondary), 0.25);
+  --rgba-accent-100: rgba(var(--rgb-accent), 1);
+  --rgba-accent-075: rgba(var(--rgb-accent), 0.75);
+  --rgba-accent-050: rgba(var(--rgb-accent), 0.5);
+  --rgba-accent-025: rgba(var(--rgb-accent), 0.25);
+
+  /* accent colors */
+  --color-primary: 191, 175, 111;
+  --color-secondary: 255, 255, 255;
+  --color-tertiary: 255, 239, 175;
+  --rgba-primary-100: rgba(var(--color-primary), 1);
+  --rgba-primary-075: rgba(var(--color-primary), 0.75);
+  --rgba-primary-050: rgba(var(--color-primary), 0.5);
+  --rgba-primary-025: rgba(var(--color-primary), 0.25);
+  --rgba-secondary-100: rgba(var(--color-secondary), 1);
+  --rgba-secondary-075: rgba(var(--color-secondary), 0.75);
+  --rgba-secondary-050: rgba(var(--color-secondary), 0.5);
+  --rgba-secondary-025: rgba(var(--color-secondary), 0.25);
+  --rgba-tertiary-100: rgba(var(--color-tertiary), 1);
+  --rgba-tertiary-075: rgba(var(--color-tertiary), 0.75);
+  --rgba-tertiary-050: rgba(var(--color-tertiary), 0.5);
+  --rgba-tertiary-025: rgba(var(--color-tertiary), 0.25);
+  
+  /* black white grey*/
+  --rgba-font-true-100: rgba(255, 255, 255, 1);
+  --rgba-font-true-075: rgba(255, 255, 255, 0.75);
+  --rgba-font-true-050: rgba(255, 255, 255, 0.5);
+  --rgba-font-true-025: rgba(255, 255, 255, 0.25);
+  --rgba-font-pale-100: rgba(191, 191, 191, 1);
+  --rgba-font-pale-075: rgba(191, 191, 191, 0.75);
+  --rgba-font-pale-050: rgba(191, 191, 191, 0.5);
+  --rgba-font-pale-025: rgba(191, 191, 191, 0.25);
+  --rgba-font-background-100: rgba(127, 127, 127, 1);
+  --rgba-font-background-075: rgba(127, 127, 127, 0.75);
+  --rgba-font-background-050: rgba(127, 127, 127, 0.5);
+  --rgba-font-background-025: rgba(127, 127, 127, 0.25);
+  --rgba-background-pale-100: rgba(63, 63, 63, 1);
+  --rgba-background-pale-075: rgba(63, 63, 63, 0.75);
+  --rgba-background-pale-050: rgba(63, 63, 63, 0.5);
+  --rgba-background-pale-025: rgba(63, 63, 63, 0.25);
+  --rgba-background-true-100: rgba(0, 0, 0, 1);
+  --rgba-background-true-075: rgba(0, 0, 0, 0.75);
+  --rgba-background-true-050: rgba(0, 0, 0, 0.5);
+  --rgba-background-true-025: rgba(0, 0, 0, 0.25);
+
+  /* color scheme assignments */
+  --site-background-color: transparent;
+  --element-border-color-normal: transparent;
+  --element-border-color-active: var(--rgba-accent-025);
+  --element-border-color-active-more: var(--rgba-accent-050);
+  --element-border-color-disabled: transparent;
+  --element-border-bottom-color-normal: var(--rgba-font-primary-050);
+  --element-border-bottom-color-active: var(--rgba-accent-100);
+  --element-border-bottom-color-disabled: var(--rgba-font-primary-025);
+  --element-background-color-normal: var(--rgba-background-primary-050);
+  --element-background-color-active: var(--rgba-background-primary-050);
+  --element-background-color-disabled: var(--rgba-background-secondary-050);
+  --element-background-gradient-color-active: var(--rgba-accent-025);
+  --element-text-color-normal: var(--rgba-font-primary-100);
+  --element-text-color-active: var(--rgba-accent-100);
+  --element-text-color-disabled: var(--rgba-font-primary-025);
+}

@@ -149,20 +149,14 @@ input::placeholder
   border: var(--element-border-width-thin) solid var(--element-border-color-active);
 }
 
+.toggle *
+{
+  user-select: none;
+}
+
 .toggle:hover
 {
-  border-color: var(--element-border-color-active);
-}
-
-.toggle .toggle-bg
-{
-  background: transparent;
-  margin: calc(var(--element-border-width-thin) * -1);
-}
-
-.toggle input[type=checkbox]:checked ~ .toggle-bg
-{
-  background: var(--element-border-color-normal);
+  border-color: var(--element-border-color-active-more);
 }
 
 .toggle input[type=checkbox]
@@ -170,18 +164,42 @@ input::placeholder
   display: none;
 }
 
-.toggle .toggle-slider
+.toggle i
 {
-  background: transparent;
-  width: 2em;
-  height: 2em;
-  left: 0em;
-  border: var(--element-border-width-thin) solid var(--element-border-color-normal);
+  position: absolute;
+  width: calc(2em - 2 * var(--element-border-width-thin));
+  height: calc(2em - 2 * var(--element-border-width-thin));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  left: 2em;
 }
 
-.toggle input[type=checkbox]:checked ~ .toggle-bg .toggle-slider
+.toggle .toggle-slider
 {
-  left: 2em;
+  background: var(--element-border-bottom-color-normal);
+}
+
+.toggle:hover .toggle-slider
+{
+  color: var(--element-text-color-active);
+}
+
+.toggle .toggle-slider:after
+{
+  content: 'clear';
+}
+
+.toggle input[type=checkbox]:checked ~ .toggle-slider:after
+{
+  content: 'done';
+}
+
+.toggle input[type=checkbox]:not(:checked) ~ .toggle-counterpiece,
+.toggle input[type=checkbox]:checked ~ .toggle-slider
+{
+  left: 0em;
 }
 
 .select
@@ -226,7 +244,7 @@ input::placeholder
   position: absolute;
   top: 100%;
   width: 100%;
-  z-index: 1;
+  z-index: 0;
 }
 
 .select button:focus ~ .options
@@ -234,6 +252,7 @@ input::placeholder
   opacity: 1;
   transition-property: opacity;
   transition-delay: 1ms;
+  z-index: 1;
 }
 
 .select .options label
