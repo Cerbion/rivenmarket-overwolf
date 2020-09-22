@@ -101,7 +101,8 @@ overwolf.games.onGameInfoUpdated.addListener(function(res) {
         registerEvents();
         setTimeout(setFeatures, 1000);
     }
-    // console.log("onGameInfoUpdated: " + JSON.stringify(res));
+    game_info = res;
+    console.log("onGameInfoUpdated: " + JSON.stringify(res));
 });
 
 overwolf.games.getRunningGameInfo(function(res) {
@@ -109,5 +110,21 @@ overwolf.games.getRunningGameInfo(function(res) {
         registerEvents();
         setTimeout(setFeatures, 1000);
     }
+    game_info = res;
     console.log("getRunningGameInfo: " + JSON.stringify(res));
 });
+
+function createIngameWindow()
+{
+    overwolf.windows.obtainDeclaredWindow('in_game', function (declared) {
+        overwolf.windows.restore('in_game', function (in_game_window) {
+            var id = declared.window.id;
+            // Restores the current window, resize now
+            overwolf.windows.changeSize(id, game_info.width, game_info.height, function(res) {
+                // Resized
+                if(game_info.width != "undefined")
+                    console.log("Resized to: " + game_info.width + "x" + game_info.height  + " (id: " + id + ")");
+            });
+        });
+    });
+}

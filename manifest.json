@@ -59,7 +59,7 @@
                 "file": "dist/windows/in_game.html",
                 "in_game_only": true,
                 "resizable": false,
-                "transparent": true,
+                "transparent": true
             }
         },
         "game_events": [8954],
