@@ -30,6 +30,10 @@
     /* font-feature-settings: 'liga'; */
 }
 
+.material-icons.rotated {
+    transform: rotate(90deg);
+}
+
 @font-face {
     font-family: 'Noto Sans';
     font-style: normal;
