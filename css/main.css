@@ -12,7 +12,6 @@
   position: relative;
   font-family: Arial;
   color: var(--element-text-color-normal);
-  /* overflow: hidden; */
 }
 
 html,
@@ -21,6 +20,7 @@ body
   margin: 0;
   padding: 0;
   background-color: var(--site-background-color);
+  overflow: hidden;
 }
 
 button,
@@ -51,7 +51,7 @@ input,
   text-transform: uppercase;
   font-weight: 700;
   height: 2em;
-  padding: 0 1em;
+  padding: 0.25em 1em 0em;
   transition: all 0.25s ease;
   color: var(--element-text-color-normal);
   outline: none;
@@ -80,6 +80,18 @@ input:hover,
   color: var(--element-text-color-active);
 }
 
+button:disabled,
+input:disabled
+{
+  color: var(--element-text-color-disabled);
+  background-color: var(--element-background-color-disabled);
+}
+
+input::placeholder
+{
+  color: var(--element-text-color-normal);
+}
+
 .range button,
 .range input[type=text]
 {
@@ -100,12 +112,18 @@ input:hover,
   height: 0.5em;
   padding: 0;
   border-width: var(--element-border-width-thin);
+  border-color: var(--element-border-color-active);
   background: transparent;
-  background-image: linear-gradient(to right, var(--rgba-font-true-100) 50%, transparent 50%);
+  background-image: linear-gradient(to right, var(--rgba-font-primary-100) 50%, transparent 50%);
   background-repeat: no-repeat;
   background-size: 200% 100%;
   background-position-x: calc(100% - 37%);
   overflow: visible;
+}
+
+.range:hover input[type=range]
+{
+  border-color: var(--element-border-color-active-more);
 }
 
 .range input[type=range]::-webkit-slider-thumb
@@ -116,20 +134,19 @@ input:hover,
   height: 1em;
   width: 0.25em;
   cursor: pointer;
-  /* margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
 }
 
 .range input[type=range]:hover::-webkit-slider-thumb,
 .range input[type=range]:focus::-webkit-slider-thumb
 {
-  border-color: var(--element-border-color-active);
+  border-color: var(--element-border-bottom-color-active);
 }
 
 .toggle
 {
   width: 4em;
   height: 2em;
-  border: var(--element-border-width-thin) solid var(--element-border-color-normal);
+  border: var(--element-border-width-thin) solid var(--element-border-color-active);
 }
 
 .toggle:hover
