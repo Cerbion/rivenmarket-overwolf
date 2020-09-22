@@ -228,6 +228,8 @@ input:hover,
 .select input[type=radio]:checked + label:after
 {
   content: 'done';
+  font-family: 'Material Icons';
+  text-transform: none;
 }
 
 /* DESIGN SPECIFIC CSS */
