@@ -114,6 +114,13 @@
 @font-face {
     font-family: 'Yantramanav';
     font-style: normal;
+    font-weight: 100;
+    src: url(../resources/Yantramanav/Yantramanav-Thin.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Yantramanav';
+    font-style: normal;
     font-weight: 300;
     src: url(../resources/Yantramanav/Yantramanav-Light.ttf) format('truetype');
 }
@@ -123,4 +130,25 @@
     font-style: normal;
     font-weight: 400;
     src: url(../resources/Yantramanav/Yantramanav-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Yantramanav';
+    font-style: normal;
+    font-weight: 500;
+    src: url(../resources/Yantramanav/Yantramanav-Medium.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Yantramanav';
+    font-style: normal;
+    font-weight: 700;
+    src: url(../resources/Yantramanav/Yantramanav-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Yantramanav';
+    font-style: normal;
+    font-weight: 900;
+    src: url(../resources/Yantramanav/Yantramanav-Black.ttf) format('truetype');
 }

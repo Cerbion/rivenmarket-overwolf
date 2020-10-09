@@ -3,14 +3,19 @@
   /* fixed to layout*/
   --element-border-width-thin: 1px;
   --element-border-width-bold: 3px;
+  --transition-duration: 0.25s;
+  --transition-timing-function: ease;
+  --transition-delay: 0s;
+  --transition-ultimate: all var(--transition-duration) var(--transition-timing-function) var(--transition-delay);
 }
 
 *
 {
   box-sizing: border-box;
-  font-size: 16px;
+  font-size: 20px;
+  font-weight: 500;
   position: relative;
-  font-family: Arial;
+  font-family: 'Yantramanav';
   color: var(--element-text-color-normal);
 }
 
@@ -23,24 +28,49 @@ body
   overflow: hidden;
 }
 
-button,
-input,
-.toggle,
-.select
+.element
 {
-  margin: 0.5em 0;
+  margin: 0.25em 0;
+  padding: 0;
+  border-style: solid;
+  border-color: var(--element-container-border-color-normal);
+  border-width: var(--element-border-width-thin);
+  background-color: var(--element-background-color-normal);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.element:hover
+{
+  border-color: var(--element-container-border-color-active);
+}
+
+.element > [class^=col]
+{
+  padding: 0.1em;
+}
+
+.element .regular-label
+{
+  margin-left: 0.5em;
+}
+
+.element:hover .regular-label
+{
+  color: var(--element-text-color-active);
 }
 
 button,
 input,
-.select label
+.select label,
+textarea
 {
   display: flex;
   align-items: center;
   justify-content: start;
   border-width: var(--element-border-width-thin);
-  border-bottom-width: var(--element-border-width-bold);
   border-color: var(--element-border-color-normal);
+  border-bottom-width: var(--element-border-width-bold);
   border-bottom-color: var(--element-border-bottom-color-normal);
   background-color: var(--element-background-color-normal);
   background-image: radial-gradient(farthest-side at center bottom, var(--element-background-gradient-color-active) 0%, transparent 50%);
@@ -51,10 +81,17 @@ input,
   text-transform: uppercase;
   font-weight: 700;
   height: 2em;
+  width: 100%;
   padding: 0.25em 1em 0em;
-  transition: all 0.25s ease;
+  transition: var(--transition-ultimate);
   color: var(--element-text-color-normal);
   outline: none;
+}
+
+.all-thin
+{
+  border-bottom-width: var(--element-border-width-thin);
+  border-bottom-color: var(--element-border-color-normal);
 }
 
 button
@@ -62,34 +99,65 @@ button
   justify-content: center;
 }
 
-button:hover,
-input:hover,
-.select label:hover
+button.icon-button
+{
+  width: 2em;
+  border-style: solid;
+  border-color: var(--element-border-bottom-color-normal);
+  border-bottom-color: var(--element-border-bottom-color-normal);
+  margin-left: 0.1em;
+  margin-right: 0.1em;
+}
+
+button.icon-button:first-child
+{
+  margin-left: 0;
+}
+
+button.icon-button:last-child
+{
+  margin-right: 0;
+}
+
+button:hover:not(:disabled),
+input:hover:not(:disabled),
+.select label:hover:not(:disabled),
+textarea:hover:not(:disabled)
 {
   background-position: center bottom;
 }
 
-button:focus,
-button:hover,
-input:focus,
-input:hover,
-.select label:hover
+button:focus:not(:disabled),
+button:hover:not(:disabled),
+input:focus:not(:disabled),
+input:hover:not(:disabled),
+.select label:hover:not(:disabled),
+textarea:focus:not(:disabled),
+textarea:hover:not(:disabled)
 {
   border-color: var(--element-border-color-active);
   border-bottom-color: var(--element-border-bottom-color-active);
   color: var(--element-text-color-active);
 }
 
+input::placeholder,
+textarea::placeholder
+{
+  color: var(--element-text-color-normal);
+}
+
 button:disabled,
-input:disabled
+input:disabled,
+textarea:disabled
 {
   color: var(--element-text-color-disabled);
   background-color: var(--element-background-color-disabled);
 }
 
-input::placeholder
+input:disabled::placeholder,
+textarea:disabled::placeholder
 {
-  color: var(--element-text-color-normal);
+  color: var(--element-text-color-disabled);
 }
 
 .range button,
@@ -110,7 +178,7 @@ input::placeholder
 {
   -webkit-appearance: none;
   height: 0.5em;
-  padding: 0;
+  padding: var(--element-border-width-thin);
   border-width: var(--element-border-width-thin);
   border-color: var(--element-border-color-active);
   background: transparent;
@@ -118,6 +186,7 @@ input::placeholder
   background-repeat: no-repeat;
   background-size: 200% 100%;
   background-position-x: calc(100% - 37%);
+  background-clip: content-box;
   overflow: visible;
 }
 
@@ -134,17 +203,17 @@ input::placeholder
   height: 1em;
   width: 0.25em;
   cursor: pointer;
+  transition: var(--transition-ultimate);
 }
 
-.range input[type=range]:hover::-webkit-slider-thumb,
-.range input[type=range]:focus::-webkit-slider-thumb
+.range:hover input[type=range]::-webkit-slider-thumb
 {
   border-color: var(--element-border-bottom-color-active);
 }
 
 .toggle
 {
-  width: 4em;
+  width: 6em;
   height: 2em;
   border: var(--element-border-width-thin) solid var(--element-border-color-active);
 }
@@ -154,6 +223,7 @@ input::placeholder
   user-select: none;
 }
 
+.element:hover .toggle,
 .toggle:hover
 {
   border-color: var(--element-border-color-active-more);
@@ -167,13 +237,13 @@ input::placeholder
 .toggle i
 {
   position: absolute;
-  width: calc(2em - 2 * var(--element-border-width-thin));
+  width: calc(3em - 2 * var(--element-border-width-thin));
   height: calc(2em - 2 * var(--element-border-width-thin));
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1em;
-  left: 2em;
+  left: 3em;
 }
 
 .toggle .toggle-slider
@@ -181,6 +251,7 @@ input::placeholder
   background: var(--element-border-bottom-color-normal);
 }
 
+.element:hover .toggle .toggle-slider,
 .toggle:hover .toggle-slider
 {
   color: var(--element-text-color-active);
@@ -200,11 +271,6 @@ input::placeholder
 .toggle input[type=checkbox]:checked ~ .toggle-slider
 {
   left: 0em;
-}
-
-.select
-{
-  overflow: visible;
 }
 
 .select button
@@ -238,21 +304,18 @@ input::placeholder
 
 .select .options
 {
-  opacity: 0;
-  transition-property: opacity;
-  transition-delay: 1ms;
   position: absolute;
   top: 100%;
   width: 100%;
-  z-index: 0;
+  z-index: 1;
+  height: 0;
+  overflow: hidden;
+  transition: height 0s ease 0.1s;
 }
 
 .select button:focus ~ .options
 {
-  opacity: 1;
-  transition-property: opacity;
-  transition-delay: 1ms;
-  z-index: 1;
+  height: 100vh;
 }
 
 .select .options label
@@ -266,6 +329,31 @@ input::placeholder
   content: 'done';
   font-family: 'Material Icons';
   text-transform: none;
+}
+
+textarea
+{
+  height: 5em;
+  resize: none;
+}
+
+/* THIS PART SHALL ONLY AFFECT THE BOTTOM BORDER, BUT IT OVERWRITES EVERY BORDER */
+textarea.borderbottomtest
+{
+  border-width: var(--element-border-width-thin);
+  border-bottom-width: var(--element-border-width-bold);
+  border-color: var(--element-border-color-normal);
+  border-bottom-color: var(--element-border-bottom-color-normal);
+  border-image-width: 0 50% var(--element-border-width-bold) 50%;
+}
+
+textarea.borderbottomtest:hover
+{
+  border-image-source: linear-gradient(to left, yellow, yellow);
+  border-image-width: 0 0% var(--element-border-width-bold) 0%;
+  border-image-repeat: stretch;
+  border-image-outset: 0 0;
+  border-image-slice: 0 0 1 0;
 }
 
 /* DESIGN SPECIFIC CSS */

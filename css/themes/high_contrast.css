@@ -26,6 +26,7 @@
   --rgba-accent-075: rgba(var(--rgb-accent), 0.75);
   --rgba-accent-050: rgba(var(--rgb-accent), 0.5);
   --rgba-accent-025: rgba(var(--rgb-accent), 0.25);
+  --rgba-accent-010: rgba(var(--rgb-accent), 0.1);
 
   /* accent colors */
   --color-primary: 191, 175, 111;
@@ -68,6 +69,8 @@
 
   /* color scheme assignments */
   --site-background-color: transparent;
+  --element-container-border-color-normal: var(--rgba-accent-010);
+  --element-container-border-color-active: var(--rgba-accent-025);
   --element-border-color-normal: transparent;
   --element-border-color-active: var(--rgba-accent-025);
   --element-border-color-active-more: var(--rgba-accent-050);
