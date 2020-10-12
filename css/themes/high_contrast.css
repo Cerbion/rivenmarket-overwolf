@@ -69,6 +69,9 @@
 
   /* color scheme assignments */
   --site-background-color: transparent;
+  --element-container-scrollbar-track-color: var(--rgba-font-primary-025);
+  --element-container-scrollbar-thumb-color: var(--rgba-font-primary-100);
+  --element-container-scrollbar-thumb-text-color: var(--rgba-background-primary-100);
   --element-container-border-color-normal: var(--rgba-accent-010);
   --element-container-border-color-active: var(--rgba-accent-025);
   --element-border-color-normal: transparent;

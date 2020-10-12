@@ -25,7 +25,67 @@ body
   margin: 0;
   padding: 0;
   background-color: var(--site-background-color);
-  overflow: hidden;
+  /* overflow: hidden; */
+}
+
+.elements-container
+{
+  height: 50vh;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+.elements-container::-webkit-scrollbar
+{
+  display: none;
+}
+
+.elements-container scrollbar 
+{
+  position: absolute;
+  right: 0;
+  width: 0.25em;
+  background: var(--element-container-scrollbar-track-color);
+  z-index: 1;
+}
+
+.elements-container scrollbar thumb
+{
+  position: absolute;
+  width: 0.35em;
+  margin-left: -0.05em;
+  background: var(--element-container-scrollbar-thumb-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* transition: var(--transition-ultimate); */
+}
+
+.elements-container scrollbar thumb:hover
+{
+  margin-left: -1.1em;
+  width: 2.45em;
+  background-clip: content-box;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 0em 1em;
+}
+
+.elements-container scrollbar thumb::after
+{
+  content : '=';
+  font-size: 0.5em;
+  color: var(--element-container-scrollbar-thumb-text-color);
+}
+
+.elements-container > .container
+{
+  padding-left: 0;
+}
+
+.elements-container > .container > .row
+{
+  height: 50vh;
 }
 
 .element
@@ -310,7 +370,7 @@ textarea:disabled::placeholder
   z-index: 1;
   height: 0;
   overflow: hidden;
-  transition: height 0s ease 0.1s;
+  transition: height 0s ease 0.25s;
 }
 
 .select button:focus ~ .options
